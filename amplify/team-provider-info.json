@@ -13,7 +13,14 @@
     },
     "categories": {
       "auth": {
-        "myaudioappa6bcabe6": {}
+        "myaudioappa6bcabe6": {},
+        "userPoolGroups": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d1qbmfnjxgz5ak",
+          "type": "manual"
+        }
       }
     }
   }

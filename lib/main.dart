@@ -89,20 +89,25 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
   Future<void> signInUser() async {
-    try {
-      SignInResult result = await Amplify.Auth.signInWithWebUI(provider: AuthProvider.cognito);
-      if (result.isSignedIn) {
-        AuthUser user = await Amplify.Auth.getCurrentUser();
-        setState(() {
-          _userEmail = user.username;
-          _isLoggedIn = true;
-        });
-        print("✅ User signed in: $_userEmail");
-      }
-    } catch (e) {
-      print("❌ Error signing in: $e");
+  try {
+    print("🚀 Attempting AWS Cognito login...");
+    SignInResult result = await Amplify.Auth.signInWithWebUI(provider: AuthProvider.cognito);
+
+    if (result.isSignedIn) {
+      AuthUser user = await Amplify.Auth.getCurrentUser();
+      setState(() {
+        _userEmail = user.username;
+        _isLoggedIn = true;
+      });
+      print("✅ User signed in successfully: $_userEmail");
+    } else {
+      print("❌ Sign-in was not completed.");
     }
+  } catch (e) {
+    print("❌ Error signing in: $e");
   }
+}
+
 
   Future<void> signOutUser() async {
     try {
