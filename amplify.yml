@@ -4,7 +4,7 @@ frontend:
     preBuild:
       commands:
         - echo "No system update needed"
-        - sudo apt-get install -y unzip xz-utils curl git
+        - yum install -y unzip tar xz curl git
         - curl -sSL https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.13.0-stable.tar.xz | tar -xJ
         - export PATH="$PWD/flutter/bin:$PATH"
         - flutter --version
