@@ -4,7 +4,7 @@ frontend:
     preBuild:
       commands:
         - echo "No system update needed"
-        - curl -sSL https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.13.0-stable.tar.xz | tar -xJ
+        - curl -sSL https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.29.2-stable.tar.xz | tar -xJ
         - export PATH="$PWD/dart-sdk/dart-sdk/bin:$PWD/flutter/bin:$PATH"
         - curl -sSL https://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-linux-x64-release.zip -o dart-sdk.zip
         - unzip dart-sdk.zip -d dart-sdk
