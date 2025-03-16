@@ -1,14 +1,13 @@
 {
-  "whyContinueWithGen1": "Prefer not to answer",
-  "projectName": "myaudioapp2",
+  "providers": [
+    "awscloudformation"
+  ],
+  "projectName": "StreamSync1",
   "version": "3.1",
   "frontend": "flutter",
   "flutter": {
     "config": {
       "ResDir": "./lib/"
     }
-  },
-  "providers": [
-    "awscloudformation"
-  ]
+  }
 }
