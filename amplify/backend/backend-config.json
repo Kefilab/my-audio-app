@@ -1,6 +1,6 @@
 {
   "auth": {
-    "audioapp5fe67861": {
+    "myaudioapp23441a629": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -16,7 +16,9 @@
           "EMAIL"
         ],
         "socialProviders": [],
-        "usernameAttributes": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
         "verificationMechanisms": [
           "EMAIL"
         ]
@@ -27,9 +29,9 @@
   },
   "hosting": {
     "amplifyhosting": {
-      "lastPushTimeStamp": "2025-03-15T23:58:08.177Z",
+      "providerPlugin": "awscloudformation",
       "service": "amplifyhosting",
-      "type": "cicd"
+      "type": "manual"
     }
   },
   "parameters": {

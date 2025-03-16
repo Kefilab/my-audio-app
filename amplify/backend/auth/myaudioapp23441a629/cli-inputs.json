@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "audioapp5fe67861_identitypool_5fe67861",
+    "identityPoolName": "myaudioapp23441a629_identitypool_3441a629",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "audioa5fe67861",
-    "userPoolName": "audioapp5fe67861_userpool_5fe67861",
+    "resourceNameTruncated": "myaudi3441a629",
+    "userPoolName": "myaudioapp23441a629_userpool_3441a629",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -31,12 +31,15 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "audioa5fe67861_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "myaudi3441a629_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "5fe67861",
-    "resourceName": "audioapp5fe67861",
+    "sharedId": "3441a629",
+    "resourceName": "myaudioapp23441a629",
     "authSelections": "identityPoolAndUserPool",
     "useDefault": "default",
+    "usernameAttributes": [
+      "email"
+    ],
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,

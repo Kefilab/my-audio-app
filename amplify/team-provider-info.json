@@ -1,25 +1,25 @@
 {
   "main": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-audioapp-main-d463e-authRole",
-      "UnauthRoleArn": "arn:aws:iam::340752815531:role/amplify-audioapp-main-d463e-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::340752815531:role/amplify-audioapp-main-d463e-authRole",
-      "Region": "eu-west-2",
-      "DeploymentBucketName": "amplify-audioapp-main-d463e-deployment",
-      "UnauthRoleName": "amplify-audioapp-main-d463e-unauthRole",
-      "StackName": "amplify-audioapp-main-d463e",
-      "StackId": "arn:aws:cloudformation:eu-west-2:340752815531:stack/amplify-audioapp-main-d463e/a4dc65f0-01f8-11f0-94f4-0677534f55dd",
-      "AmplifyAppId": "d2xpdiri23gbi"
+      "AuthRoleName": "amplify-myaudioapp2-main-aa2bd-authRole",
+      "UnauthRoleArn": "arn:aws:iam::340752815531:role/amplify-myaudioapp2-main-aa2bd-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::340752815531:role/amplify-myaudioapp2-main-aa2bd-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-myaudioapp2-main-aa2bd-deployment",
+      "UnauthRoleName": "amplify-myaudioapp2-main-aa2bd-unauthRole",
+      "StackName": "amplify-myaudioapp2-main-aa2bd",
+      "StackId": "arn:aws:cloudformation:us-west-2:340752815531:stack/amplify-myaudioapp2-main-aa2bd/5194d070-0203-11f0-842c-0a489308d945",
+      "AmplifyAppId": "d34gjtz5shc8w4"
     },
     "categories": {
       "hosting": {
         "amplifyhosting": {
-          "appId": "d2xpdiri23gbi",
-          "type": "cicd"
+          "appId": "d34gjtz5shc8w4",
+          "type": "manual"
         }
       },
       "auth": {
-        "audioapp5fe67861": {}
+        "myaudioapp23441a629": {}
       }
     }
   }
