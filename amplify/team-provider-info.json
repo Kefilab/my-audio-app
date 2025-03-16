@@ -13,7 +13,8 @@
     },
     "categories": {
       "auth": {
-        "dk3m1188as4b159dccb10": {}
+        "dk3m1188as4b159dccb10": {},
+        "userPoolGroups": {}
       }
     }
   }

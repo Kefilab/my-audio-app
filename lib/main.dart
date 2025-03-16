@@ -17,7 +17,7 @@ Future<void> configureAmplify() async {
   try {
     if (!Amplify.isConfigured) {
       await Amplify.addPlugin(AmplifyAuthCognito());
-      await Amplify.configure(amplifyConfig);
+      await Amplify.configure(amplifyconfig);
       print("✅ Amplify successfully configured");
     }
   } catch (e) {
