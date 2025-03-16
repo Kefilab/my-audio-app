@@ -3,16 +3,16 @@ frontend:
   phases:
     preBuild:
       commands:
-      - echo "No system update needed"
-      - curl -sSL https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.13.0-stable.tar.xz | tar -xJ
-      - export PATH="$PWD/flutter/bin:$PATH"
-      - curl -sSL https://storage.googleapis.com/dart-archive/channels/stable/release/3.7.2/sdk/dartsdk-linux-x64-release.zip -o dart-sdk.zip
-      - unzip dart-sdk.zip -d dart-sdk
-      - export PATH="$PWD/dart-sdk/dart-sdk/bin:$PATH"
-      - dart --version
-      - flutter --version
-      - flutter pub get
-       
+        - echo "No system update needed"
+        - curl -sSL https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.13.0-stable.tar.xz | tar -xJ
+        - export PATH="$PWD/flutter/bin:$PATH"
+        - curl -sSL https://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-linux-x64-release.zip -o dart-sdk.zip
+        - unzip dart-sdk.zip -d dart-sdk
+        - export PATH="$PWD/dart-sdk/dart-sdk/bin:$PWD/flutter/bin:$PATH"
+        - dart --version
+        - flutter doctor
+        - flutter --version
+        - flutter pub get
     build:
       commands:
         - flutter build web
