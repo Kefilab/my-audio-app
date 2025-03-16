@@ -7,7 +7,6 @@ import 'amplifyconfiguration.dart';
 import 'package:web/web.dart' as web;
 import 'dart:js_interop';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await configureAmplify();
@@ -16,9 +15,11 @@ void main() async {
 
 Future<void> configureAmplify() async {
   try {
-    await Amplify.addPlugin(AmplifyAuthCognito());
-    await Amplify.configure(amplifyConfig);
-    print("✅ Amplify successfully configured");
+    if (!Amplify.isConfigured) {
+      await Amplify.addPlugin(AmplifyAuthCognito());
+      await Amplify.configure(amplifyConfig);
+      print("✅ Amplify successfully configured");
+    }
   } catch (e) {
     print("❌ Error configuring Amplify: $e");
   }
@@ -48,13 +49,28 @@ class _HomeScreenState extends State<HomeScreen> {
   bool _isLoggedIn = false;
   List<dynamic> _playlists = [];
   final String clientId = '9b2fc2802d624dd2861d67f1f213a9d9';
-  final String redirectUri = 'http://localhost:3000/'; // Match Spotify Settings
+  final String redirectUri = 'http://localhost:3000/';
   final String clientSecret = 'eb199c7d66a9494f9683197ee08fbe82';
 
   @override
   void initState() {
     super.initState();
     _handleAuthRedirect();
+    _checkCurrentUser();
+  }
+
+  /// Check if the user is already signed in
+  Future<void> _checkCurrentUser() async {
+    try {
+      AuthUser user = await Amplify.Auth.getCurrentUser();
+      setState(() {
+        _userEmail = user.username;
+        _isLoggedIn = true;
+      });
+      print("✅ User is already signed in: $_userEmail");
+    } catch (e) {
+      print("❌ No user signed in");
+    }
   }
 
   void _handleAuthRedirect() {
@@ -65,49 +81,47 @@ class _HomeScreenState extends State<HomeScreen> {
       exchangeCodeForToken(authCode);
     }
   }
+
   Future<void> loginToSpotify() async {
-  final scopes = [
-    'user-read-private',
-    'user-read-email',
-    'playlist-read-private',
-    'playlist-read-collaborative',
-    'user-modify-playback-state',
-    'user-read-playback-state',
-    'user-read-currently-playing'
-  ].join('%20'); // URL encoding
+    final scopes = [
+      'user-read-private',
+      'user-read-email',
+      'playlist-read-private',
+      'playlist-read-collaborative',
+      'user-modify-playback-state',
+      'user-read-playback-state',
+      'user-read-currently-playing'
+    ].join('%20');
 
-  final authUrl =
-      'https://accounts.spotify.com/authorize'
-      '?client_id=$clientId'
-      '&response_type=code'
-      '&redirect_uri=$redirectUri'
-      '&scope=$scopes';
+    final authUrl =
+        'https://accounts.spotify.com/authorize'
+        '?client_id=$clientId'
+        '&response_type=code'
+        '&redirect_uri=$redirectUri'
+        '&scope=$scopes';
 
-  // Redirect user to Spotify login page using JavaScript interop
-  web.window.location.href = authUrl;
-}
-
+    web.window.location.href = authUrl;
+  }
 
   Future<void> signInUser() async {
-  try {
-    print("🚀 Attempting AWS Cognito login...");
-    SignInResult result = await Amplify.Auth.signInWithWebUI(provider: AuthProvider.cognito);
+    try {
+      print("🚀 Attempting AWS Cognito login...");
+      SignInResult result = await Amplify.Auth.signInWithWebUI(provider: AuthProvider.cognito);
 
-    if (result.isSignedIn) {
-      AuthUser user = await Amplify.Auth.getCurrentUser();
-      setState(() {
-        _userEmail = user.username;
-        _isLoggedIn = true;
-      });
-      print("✅ User signed in successfully: $_userEmail");
-    } else {
-      print("❌ Sign-in was not completed.");
+      if (result.isSignedIn) {
+        AuthUser user = await Amplify.Auth.getCurrentUser();
+        setState(() {
+          _userEmail = user.username;
+          _isLoggedIn = true;
+        });
+        print("✅ User signed in successfully: $_userEmail");
+      } else {
+        print("❌ Sign-in was not completed.");
+      }
+    } catch (e) {
+      print("❌ Error signing in: $e");
     }
-  } catch (e) {
-    print("❌ Error signing in: $e");
   }
-}
-
 
   Future<void> signOutUser() async {
     try {
@@ -141,10 +155,10 @@ class _HomeScreenState extends State<HomeScreen> {
       setState(() {
         _accessToken = data['access_token'];
       });
-      print('Spotify Access Token: $_accessToken');
+      print('🎵 Spotify Access Token: $_accessToken');
       fetchPlaylists();
     } else {
-      print('Error fetching token: ${response.body}');
+      print('❌ Error fetching token: ${response.body}');
     }
   }
 
@@ -163,9 +177,9 @@ class _HomeScreenState extends State<HomeScreen> {
       setState(() {
         _playlists = data['items'];
       });
-      print('Fetched Playlists: $_playlists');
+      print('🎵 Fetched Playlists: $_playlists');
     } else {
-      print('Error fetching playlists: ${response.body}');
+      print('❌ Error fetching playlists: ${response.body}');
     }
   }
 

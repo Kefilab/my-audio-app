@@ -17,6 +17,9 @@
           "appId": "d2xpdiri23gbi",
           "type": "cicd"
         }
+      },
+      "auth": {
+        "audioapp5fe67861": {}
       }
     }
   }
