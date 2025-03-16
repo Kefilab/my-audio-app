@@ -1,4 +1,4 @@
-const amplifyConfig = '''{
+const amplifyconfig = '''{
     "UserAgent": "aws-amplify-cli/2.0",
     "Version": "1.0",
     "auth": {
@@ -19,8 +19,8 @@ const amplifyConfig = '''{
                 },
                 "CognitoUserPool": {
                     "Default": {
-                        "PoolId": "us-west-2_QrRiCVwQg",
-                        "AppClientId": "684o1lsujooldargsg7lsfll9e",
+                        "PoolId": "us-west-2_1S03qzGZv",
+                        "AppClientId": "2nm98mucfc7ik3da07ma8gojm3",
                         "Region": "us-west-2"
                     }
                 },
@@ -40,20 +40,20 @@ const amplifyConfig = '''{
                             ]
                         },
                         "authenticationFlowType": "USER_SRP_AUTH",
-                        "socialProviders": [],
-                        "usernameAttributes": [
-                            "EMAIL"
-                        ],
-                        "signupAttributes": [
-                            "EMAIL"
+                        "mfaConfiguration": "OFF",
+                        "mfaTypes": [
+                            "SMS"
                         ],
                         "passwordProtectionSettings": {
                             "passwordPolicyMinLength": 8,
                             "passwordPolicyCharacters": []
                         },
-                        "mfaConfiguration": "OFF",
-                        "mfaTypes": [
-                            "SMS"
+                        "signupAttributes": [
+                            "EMAIL"
+                        ],
+                        "socialProviders": [],
+                        "usernameAttributes": [
+                            "EMAIL"
                         ],
                         "verificationMechanisms": [
                             "EMAIL"

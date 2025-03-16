@@ -36,7 +36,7 @@
     "sharedId": "59dccb10",
     "resourceName": "dk3m1188as4b159dccb10",
     "authSelections": "identityPoolAndUserPool",
-    "useDefault": "manual",
+    "useDefault": "default",
     "usernameAttributes": [
       "email"
     ],
@@ -58,19 +58,14 @@
     },
     "breakCircularDependency": true,
     "dependsOn": [],
-    "hostedUI": true,
-    "hostedUIDomainName": "dk3m1188as4b14d637211-4d637211",
-    "authProvidersUserPool": [],
-    "hostedUIProviderMeta": "[]",
-    "authProviders": [],
-    "thirdPartyAuth": false,
+    "hostedUI": false,
     "userPoolGroups": false,
     "adminQueries": false,
     "triggers": {},
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\",\"https://main.d33boiz7wmudx.amplifyapp.com/\"],\"LogoutURLs\":[\"http://localhost:3000/\",\"https://main.d33boiz7wmudx.amplifyapp.com/\"]}",
     "parentStack": {
       "Ref": "AWS::StackId"
     },
-    "permissions": []
+    "permissions": [],
+    "authProviders": []
   }
 }
