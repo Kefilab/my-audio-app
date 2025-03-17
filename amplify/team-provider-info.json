@@ -15,6 +15,9 @@
       "auth": {
         "dk3m1188as4b159dccb10": {},
         "userPoolGroups": {}
+      },
+      "api": {
+        "dk3m1188as4b1": {}
       }
     }
   }

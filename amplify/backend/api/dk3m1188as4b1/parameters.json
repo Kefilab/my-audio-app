@@ -1,0 +1,5 @@
+{
+  "AppSyncApiName": "dk3m1188as4b1",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false
+}

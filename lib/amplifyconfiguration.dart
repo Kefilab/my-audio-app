@@ -1,6 +1,19 @@
 const amplifyconfig = '''{
     "UserAgent": "aws-amplify-cli/2.0",
     "Version": "1.0",
+    "api": {
+        "plugins": {
+            "awsAPIPlugin": {
+                "dk3m1188as4b1": {
+                    "endpointType": "GraphQL",
+                    "endpoint": "https://i45mg4iuibgb7fpuvoyhtxshbm.appsync-api.us-west-2.amazonaws.com/graphql",
+                    "region": "us-west-2",
+                    "authorizationType": "API_KEY",
+                    "apiKey": "da2-it32o663kngjjpkpg4l4avlg4i"
+                }
+            }
+        }
+    },
     "auth": {
         "plugins": {
             "awsCognitoAuthPlugin": {
@@ -58,6 +71,15 @@ const amplifyconfig = '''{
                         "verificationMechanisms": [
                             "EMAIL"
                         ]
+                    }
+                },
+                "AppSync": {
+                    "Default": {
+                        "ApiUrl": "https://i45mg4iuibgb7fpuvoyhtxshbm.appsync-api.us-west-2.amazonaws.com/graphql",
+                        "Region": "us-west-2",
+                        "AuthMode": "API_KEY",
+                        "ApiKey": "da2-it32o663kngjjpkpg4l4avlg4i",
+                        "ClientDatabasePrefix": "dk3m1188as4b1_API_KEY"
                     }
                 }
             }
