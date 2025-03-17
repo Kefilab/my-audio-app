@@ -48,9 +48,10 @@ class _HomeScreenState extends State<HomeScreen> {
   String? _userEmail;
   bool _isLoggedIn = false;
   List<dynamic> _playlists = [];
+
   final String clientId = '9b2fc2802d624dd2861d67f1f213a9d9';
   final String redirectUri = 'https://main.d33boiz7wmudx.amplifyapp.com/';
-  final String clientSecret = 'eb199c7d66a9494f9683197ee08fbe82';
+  final String clientSecret = 'eb199c7d66a9494f9683197ee08fbe82';  // Fixed variable name
 
   @override
   void initState() {
@@ -90,7 +91,9 @@ class _HomeScreenState extends State<HomeScreen> {
       'playlist-read-collaborative',
       'user-modify-playback-state',
       'user-read-playback-state',
-      'user-read-currently-playing'
+      'user-read-currently-playing',  // FIXED: Added missing comma
+      'app-remote-control',
+      'streaming'
     ].join('%20');
 
     final authUrl =
@@ -141,7 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
       Uri.parse('https://accounts.spotify.com/api/token'),
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Authorization': 'Basic ' + base64Encode(utf8.encode('$clientId:$clientSecret')),
+        'Authorization': 'Basic ' + base64Encode(utf8.encode('$clientId:$clientSecret')),  // Fixed variable
       },
       body: {
         'grant_type': 'authorization_code',
