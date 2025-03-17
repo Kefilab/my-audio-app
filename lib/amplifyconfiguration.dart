@@ -20,17 +20,17 @@ const amplifyconfig = '''{
                 "CognitoUserPool": {
                     "Default": {
                         "PoolId": "us-west-2_1S03qzGZv",
-                        "AppClientId": "4pe4k549np83v8t8gda58uvd6v",
+                        "AppClientId": "2nm98mucfc7ik3da07ma8gojm3",
                         "Region": "us-west-2"
                     }
                 },
                 "Auth": {
                     "Default": {
                         "OAuth": {
-                            "WebDomain": "dk3m1188as4b14d637211-4d637211-main.auth.us-west-2.amazoncognito.com",
+                            "WebDomain": "dk3m1188as4b1674638fe-674638fe-main.auth.us-west-2.amazoncognito.com",
                             "AppClientId": "2nm98mucfc7ik3da07ma8gojm3",
-                            "SignInRedirectURI": "http://localhost:3000/,https://main.d33boiz7wmudx.amplifyapp.com/",
-                            "SignOutRedirectURI": "http://localhost:3000/,https://main.d33boiz7wmudx.amplifyapp.com/",
+                            "SignInRedirectURI": "https://main.d33boiz7wmudx.amplifyapp.com/,http://localhost:3000/",
+                            "SignOutRedirectURI": "https://main.d33boiz7wmudx.amplifyapp.com/,http://localhost:3000/",
                             "Scopes": [
                                 "phone",
                                 "email",
