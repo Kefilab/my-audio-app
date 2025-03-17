@@ -49,8 +49,8 @@ class _HomeScreenState extends State<HomeScreen> {
   bool _isLoggedIn = false;
   List<dynamic> _playlists = [];
   final String clientId = '9b2fc2802d624dd2861d67f1f213a9d9';
-  final String redirectUri = 'http://localhost:3000/';
-  final String clientSecret = 'eb199c7d66a9494f9683197ee08fbe82';
+  final String redirectUri = 'https://main.d33boiz7wmudx.amplifyapp.com/';
+  final String cientSecret = 'eb199c7d66a9494f9683197ee08fbe82';
 
   @override
   void initState() {
